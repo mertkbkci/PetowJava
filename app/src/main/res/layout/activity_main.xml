@@ -17,6 +17,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/reliLayout1">
 
+            <include layout="@layout/layout_top_tabs"/>
+
         </RelativeLayout>
 
         <!-- Middle section -->
@@ -28,6 +30,8 @@
             android:layout_below="@id/reliLayout1">
 
 
+            <include
+                layout="@layout/layout_center_viewpager"/>
 
         </RelativeLayout>
 
