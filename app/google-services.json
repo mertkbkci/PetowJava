@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "853119110156",
+    "project_id": "petowjava-e425e",
+    "storage_bucket": "petowjava-e425e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853119110156:android:0205fe4194fddbd911f229",
+        "android_client_info": {
+          "package_name": "com.camerba.petowjava"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853119110156-i9oca02g0v3hs6hkn7q981db58u65kpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6OFZIusdMASYNqhS-lDN6kGsziEOf8W4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853119110156-i9oca02g0v3hs6hkn7q981db58u65kpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
