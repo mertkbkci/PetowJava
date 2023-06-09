@@ -28,6 +28,8 @@ public class AccountSettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_setting);
 
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.relLayout1);
         setupSettingsList();
         setupFragments();
 
