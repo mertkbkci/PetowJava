@@ -1,4 +1,4 @@
-package com.camerba.petowjava;
+package com.camerba.petowjava.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,21 +8,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class HomeActivity extends AppCompatActivity {
     //
-    private static final String TAG = "HomeActivity";
+    private static final String TAG = "MainActivity";
     //context
-    private Context mContext = HomeActivity.this;
+    private final Context mContext = HomeActivity.this;
     //context calling
     private static final int ACTIVITY_NUM = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate: Starring Activity");
 

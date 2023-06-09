@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.camerba.petowjava.HomeActivity;
-import com.camerba.petowjava.LikesActivity;
-import com.camerba.petowjava.ProfileActivity;
+import com.camerba.petowjava.Home.HomeActivity;
+import com.camerba.petowjava.Likes.LikesActivity;
+import com.camerba.petowjava.Profile.ProfileActivity;
 import com.camerba.petowjava.R;
-import com.camerba.petowjava.SearchActivity;
-import com.camerba.petowjava.ShareActivity;
+import com.camerba.petowjava.Search.SearchActivity;
+import com.camerba.petowjava.Share.ShareActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 

@@ -1,4 +1,4 @@
-package com.camerba.petowjava;
+package com.camerba.petowjava.Share;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,23 +6,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LikesActivity extends AppCompatActivity {
+public class ShareActivity extends AppCompatActivity {
     //
-    private static final String TAG = "LikesActivity";
+    private static final String TAG = "ShareActivity";
     //context
-    private Context mContext = LikesActivity.this;
+    private final Context mContext = ShareActivity.this;
     //context calling
-    private static final int ACTIVITY_NUM = 3;
+    private static final int ACTIVITY_NUM = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate: Starring Activity");
 
@@ -46,6 +47,5 @@ public class LikesActivity extends AppCompatActivity {
         Menu menu = bottomNavigationViewEx.getMenu();
         MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
         menuItem.setChecked(true);
-
     }
 }

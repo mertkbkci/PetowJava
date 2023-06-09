@@ -1,4 +1,4 @@
-package com.camerba.petowjava;
+package com.camerba.petowjava.Profile;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,23 +6,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SearchActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
     //
-    private static final String TAG = "SearchActivity";
+    private static final String TAG = "ProfileActivity";
     //context
-    private Context mContext = SearchActivity.this;
+    private final Context mContext = ProfileActivity.this;
     //context calling
-    private static final int ACTIVITY_NUM = 1;
+    private static final int ACTIVITY_NUM = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate: Starring Activity");
 
