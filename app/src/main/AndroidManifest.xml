@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PetowJava"
         tools:targetApi="31">
         <activity
+            android:name=".AccountSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.HomeActivity"
             android:exported="true">
             <intent-filter>
@@ -21,19 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Likes.LikesActivity">
-
-        </activity>
-        <activity android:name=".Profile.ProfileActivity">
-
-        </activity>
-        <activity android:name=".Search.SearchActivity">
-
-        </activity>
-        <activity android:name=".Share.ShareActivity">
-
-        </activity>
+        <activity android:name=".Likes.LikesActivity"></activity>
+        <activity android:name=".Profile.ProfileActivity"></activity>
+        <activity android:name=".Search.SearchActivity"></activity>
+        <activity android:name=".Share.ShareActivity"></activity>
     </application>
 
 </manifest>
