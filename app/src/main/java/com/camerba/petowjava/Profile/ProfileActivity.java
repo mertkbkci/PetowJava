@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class ProfileActivity extends AppCompatActivity {
-    //
+
     private static final String TAG = "ProfileActivity";
     //context
     private final Context mContext = ProfileActivity.this;
@@ -24,12 +24,13 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
-        Log.d(TAG, "onCreate: Starring Activity");
+        Log.d(TAG, "onCreate: Starring ");
 
-        //give instance of setupBottomNavigation view method
-        setupBottomNavigation();
+
+        //setupBottomNavigation();
+        setupToolBar();
     }
 
     /*
@@ -73,5 +74,11 @@ public class ProfileActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
         menuItem.setChecked(true);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.profile_menu,menu);
+        return true;
     }
 }
