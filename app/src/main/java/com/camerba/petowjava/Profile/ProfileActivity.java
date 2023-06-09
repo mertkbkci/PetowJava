@@ -1,11 +1,15 @@
 package com.camerba.petowjava.Profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
+import com.camerba.petowjava.AccountSettingActivity;
 import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
@@ -41,18 +45,12 @@ public class ProfileActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        ImageView imageView = findViewById(R.id.profileMenu);
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-
-                Log.w(TAG, "onMenuItemClick: click menu item" + item );
-
-                if (item.getItemId() == R.id.profileMenu) {
-                    Log.d(TAG, "onMenuItemClick: Navigating to profile preferences");
-                }
-
-
-                return false;
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, AccountSettingActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -76,9 +74,5 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.profile_menu,menu);
-        return true;
-    }
+
 }
