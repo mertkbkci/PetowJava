@@ -1,20 +1,20 @@
 package com.camerba.petowjava;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SearchActivity extends AppCompatActivity {
     //
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "SearchActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         Log.d(TAG, "onCreate: Starring Activity");
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx)
                 findViewById(R.id.bottomNavigationViewBar);
 
-        //bottom navigation view hepler
+        //bottom navigation view helper
         BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
 
     }
