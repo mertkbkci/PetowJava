@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="40dp"
             android:id="@+id/relLayout2">
 
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relLayout3"
-            android:layout_below="@+id/reliLayaut2"
+            android:layout_below="@+id/relLayout2"
             android:layout_marginBottom="50dp">
 
             <include
