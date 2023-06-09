@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.camerba.petowjava.AccountSettingActivity;
 import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;

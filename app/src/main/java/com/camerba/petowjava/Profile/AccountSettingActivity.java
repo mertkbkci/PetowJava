@@ -1,4 +1,4 @@
-package com.camerba.petowjava;
+package com.camerba.petowjava.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.google.firebase.storage.FirebaseStorage;
+import com.camerba.petowjava.R;
 
 import java.util.ArrayList;
 
@@ -22,13 +22,7 @@ public class AccountSettingActivity extends AppCompatActivity {
 
         setupSettingsList();
         ImageView backArrow = findViewById(R.id.backArrow);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-
-            }
-        });
+        backArrow.setOnClickListener(v -> finish());
     }
 
     private void setupSettingsList(){
