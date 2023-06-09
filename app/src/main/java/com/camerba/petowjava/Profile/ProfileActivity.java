@@ -11,6 +11,7 @@ import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ProfileActivity extends AppCompatActivity {
     //
@@ -29,6 +30,30 @@ public class ProfileActivity extends AppCompatActivity {
 
         //give instance of setupBottomNavigation view method
         setupBottomNavigation();
+    }
+
+    /*
+    *SetupToolBar method
+     */
+
+    private void  setupToolBar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolbar);
+        setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                Log.w(TAG, "onMenuItemClick: click menu item" + item );
+
+                if (item.getItemId() == R.id.profileMenu) {
+                    Log.d(TAG, "onMenuItemClick: Navigating to profile preferences");
+                }
+
+
+                return false;
+            }
+        });
     }
     /*
     in this bottom navigation function will
