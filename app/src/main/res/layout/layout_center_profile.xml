@@ -19,7 +19,7 @@
         <!--medium section-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/relLayout1"
             android:id="@+id/relLayout2"
             android:background="@drawable/white_grey_border_top">
@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:baselineAligned="false"
                 android:id="@+id/LinLayout"
                 android:weightSum="100">
 
@@ -43,6 +44,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/profilePhoto"
+                       android:layout_centerVertical="true"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@color/black"
                         android:layout_marginTop="20dp">
@@ -54,7 +56,7 @@
                 <RelativeLayout
 
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_weight="75"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp">
@@ -73,11 +75,61 @@
                 android:orientation="vertical"
                 android:layout_below="@+id/LinLayout"
                 android:padding="20dp"
-                android:layout_marginBottom="15dp">
+                android:layout_marginBottom="15dp"
+                android:id="@+id/LinLayout2">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/display_name"
+                    android:textStyle="bold"
+                    android:text="Mert"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/description"
+                    android:textStyle="bold"
+                    android:text="Mert"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/website"
+                    android:textStyle="bold"
+                    android:text="Mert"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"/>
 
 
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LinLayout2"
+                android:layout_marginBottom="50dp">
+
+                <GridView
+                    android:id="@+id/gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="1dp">
+
+
+                </GridView>
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
