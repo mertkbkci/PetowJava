@@ -33,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
 
         //give instance of setupBottomNavigation view method
         setupBottomNavigation();
+        //tab adding methot
+        setupViewPager();
     }
 
     /*
