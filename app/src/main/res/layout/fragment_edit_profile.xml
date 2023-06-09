@@ -15,7 +15,9 @@
 
             <!--tollbar-->
             <include
-                layout="@layout/snippet_top_editprofiletoolbar"></include>
+                layout="@layout/snippet_top_editprofiletoolbar">
+
+            </include>
 
         </RelativeLayout>
 
