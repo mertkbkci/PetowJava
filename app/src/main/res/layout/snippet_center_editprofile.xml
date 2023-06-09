@@ -17,14 +17,36 @@
                 android:layout_marginTop="20dp"
                 app:civ_border_color="@color/black"
                 app:civ_border_width="2dp"
+                android:src="@drawable/profilePhoto"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fotoğfarı Değiştir"/>
+                android:text="Fotoğfarı Değiştir"
+                android:id="@+id/changProfilePhoto"
+                android:layout_below="@+id/profile_photo"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/changProfilePhoto"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/grey_border_bottom"
+                android:id="@+id/relLayout1">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src=""
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
 
 
 
