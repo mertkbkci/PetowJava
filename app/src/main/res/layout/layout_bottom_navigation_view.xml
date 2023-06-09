@@ -12,7 +12,8 @@
     android:layout_height="match_parent"
     android:id="@+id/bottomNavigationViewBar"
     android:background="@drawable/petow_color_border_bottom"
-    app:menu="@menu/bottom_navigation_menu"/>
+    app:menu="@menu/bottom_navigation_menu"
+    />
 
     </RelativeLayout>
 </merge>

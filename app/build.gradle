@@ -44,5 +44,5 @@ dependencies {
 
     //bottom navigation
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
-
+    implementation "com.android.support:design:33"
 }

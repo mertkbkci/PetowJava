@@ -33,14 +33,16 @@
             <include
                 layout="@layout/layout_center_viewpager"/>
 
-        </RelativeLayout>
+
+     </RelativeLayout>
 
 
         <!--Bottom Navigation -->
+
         <include
             layout="@layout/layout_bottom_navigation_view"/>
 
-    </RelativeLayout>
 
+</RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
