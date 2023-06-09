@@ -27,6 +27,8 @@
 
             <!--center editprofile-->
 
+            <include
+                layout="@layout/snippet_center_editprofile"/>
         </RelativeLayout>
     </RelativeLayout>
 
