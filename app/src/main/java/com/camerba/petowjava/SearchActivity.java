@@ -1,8 +1,10 @@
 package com.camerba.petowjava;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SearchActivity extends AppCompatActivity {
     //
     private static final String TAG = "SearchActivity";
+    //context
+    private Context mContext = SearchActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class SearchActivity extends AppCompatActivity {
 
         //bottom navigation view helper
         BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        //enable navigation bar this
+        BottomNavigationViewHelper.enableNavigation(mContext,bottomNavigationViewEx);
 
     }
 }
