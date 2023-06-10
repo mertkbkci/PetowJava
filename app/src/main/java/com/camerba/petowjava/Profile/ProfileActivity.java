@@ -15,6 +15,8 @@ import com.camerba.petowjava.util.BottomNavigationViewHelper;
 import com.camerba.petowjava.util.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import java.util.ArrayList;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -42,6 +44,10 @@ public class ProfileActivity extends AppCompatActivity {
         setupToolBar();
         setupActivityWidgets();
         setupProfileImage();
+
+    }
+
+    private void setupImageGrid(ArrayList<String> imgURLs){
 
     }
 
