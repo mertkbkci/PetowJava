@@ -1,13 +1,25 @@
 package com.camerba.petowjava.util;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+
+import com.camerba.petowjava.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public class GridImageAdapter extends ArrayAdapter<String> {
 
@@ -17,7 +29,8 @@ public class GridImageAdapter extends ArrayAdapter<String> {
     private String mAppend;
     private ArrayList<String> imgURLs;
 
-    public GridImageAdapter(@NonNull Context context, int resource, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
+    public GridImageAdapter(@NonNull Context context, int resource, Context mContext, LayoutInflater mInflater,
+                            int layoutResource, String mAppend, ArrayList<String> imgURLs) {
         super(context, resource);
         this.mContext = mContext;
         this.mInflater = mInflater;
@@ -26,48 +39,67 @@ public class GridImageAdapter extends ArrayAdapter<String> {
         this.imgURLs = imgURLs;
     }
 
-    public GridImageAdapter(@NonNull Context context, int resource, int textViewResourceId, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
-        super(context, resource, textViewResourceId);
-        this.mContext = mContext;
-        this.mInflater = mInflater;
-        this.layoutResource = layoutResource;
-        this.mAppend = mAppend;
-        this.imgURLs = imgURLs;
+    private static class ViewHolder{
+        ImageView image;
+        ProgressBar mProgressbar;
     }
 
-    public GridImageAdapter(@NonNull Context context, int resource, @NonNull String[] objects, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
-        super(context, resource, objects);
-        this.mContext = mContext;
-        this.mInflater = mInflater;
-        this.layoutResource = layoutResource;
-        this.mAppend = mAppend;
-        this.imgURLs = imgURLs;
-    }
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-    public GridImageAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull String[] objects, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
-        super(context, resource, textViewResourceId, objects);
-        this.mContext = mContext;
-        this.mInflater = mInflater;
-        this.layoutResource = layoutResource;
-        this.mAppend = mAppend;
-        this.imgURLs = imgURLs;
-    }
+        final ViewHolder holder;
 
-    public GridImageAdapter(@NonNull Context context, int resource, @NonNull List<String> objects, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
-        super(context, resource, objects);
-        this.mContext = mContext;
-        this.mInflater = mInflater;
-        this.layoutResource = layoutResource;
-        this.mAppend = mAppend;
-        this.imgURLs = imgURLs;
-    }
+        if (convertView == null){
+            convertView = mInflater.inflate(layoutResource,parent,false);
+            holder = new ViewHolder();
+            holder.mProgressbar = (ProgressBar) convertView.findViewById(R.id.profileImageProgressBar);//bak
+            holder.image = (ImageView) convertView.findViewById(R.id.gridImageView);
 
-    public GridImageAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull List<String> objects, Context mContext, LayoutInflater mInflater, int layoutResource, String mAppend, ArrayList<String> imgURLs) {
-        super(context, resource, textViewResourceId, objects);
-        this.mContext = mContext;
-        this.mInflater = mInflater;
-        this.layoutResource = layoutResource;
-        this.mAppend = mAppend;
-        this.imgURLs = imgURLs;
+            convertView.setTag(holder);
+        }
+        else {
+            holder = (ViewHolder) convertView.getTag();
+
+        }
+
+        String imgURL = getItem(position);
+
+        ImageLoader imageLoader = ImageLoader.getInstance();
+
+        imageLoader.displayImage(mAppend + imgURL, holder.image, new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String imageUri, View view) {
+                if (holder.mProgressbar != null){
+                    holder.mProgressbar.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+
+                if (holder.mProgressbar != null){
+                    holder.mProgressbar.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                if (holder.mProgressbar != null) {
+                    holder.mProgressbar.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onLoadingCancelled(String imageUri, View view) {
+                if (holder.mProgressbar != null){
+                    holder.mProgressbar.setVisibility(View.GONE);
+                }
+            }
+
+        });
+
+
+        return convertView;
     }
 }
