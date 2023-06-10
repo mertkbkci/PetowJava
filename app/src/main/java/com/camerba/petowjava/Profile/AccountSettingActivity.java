@@ -29,7 +29,7 @@ public class AccountSettingActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private RelativeLayout mRelativeLayout;
 
-    private Context mContext =AccountSettingActivity.this;
+    private final Context mContext =AccountSettingActivity.this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

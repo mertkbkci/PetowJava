@@ -42,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Starring ");
 
 
-        //setupBottomNavigation();
+        //setupBottomNavigationView();
 
         setupToolBar();
         setupActivityWidgets();
@@ -108,9 +108,9 @@ public class ProfileActivity extends AppCompatActivity {
     /*
     in this bottom navigation function will
     */
-    private void setupBottomNavigation(){
+    private void setupBottomNavigationView(){
 
-        Log.d(TAG, "setupBottomNavigation: setting up BottomNavigationView");
+        Log.d(TAG, "setupBottomNavigationView: setting up BottomNavigationView");
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx)
                 findViewById(R.id.bottomNavigationViewBar);
 
