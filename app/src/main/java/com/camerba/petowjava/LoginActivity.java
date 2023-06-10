@@ -46,6 +46,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mPleaseWait.setVisibility(View.GONE);
         mPleaseWait.setVisibility(View.GONE);
+
+        init();
+        setupFirebaseAuth();
     }
 
     private boolean isStringNull(String string){
