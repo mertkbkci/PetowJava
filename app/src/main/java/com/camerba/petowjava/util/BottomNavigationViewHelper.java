@@ -28,30 +28,27 @@ public class BottomNavigationViewHelper {
     }
 
     public static void enableNavigation(final Context context, BottomNavigationViewEx view) {
-        view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent intent = null;
+        view.setOnNavigationItemSelectedListener(item -> {
+            Intent intent = null;
 
-                if (item.getItemId() == R.id.ic_home) {
-                    intent = new Intent(context, HomeActivity.class);//ACTIVITY_NUM = 0
-                } else if (item.getItemId() == R.id.ic_search) {
-                    intent = new Intent(context, SearchActivity.class);//ACTIVITY_NUM = 1
-                } else if (item.getItemId() == R.id.ic_share) {
-                    intent = new Intent(context, ShareActivity.class);//ACTIVITY_NUM = 2
-                } else if (item.getItemId() == R.id.ic_alert) {
-                    intent = new Intent(context, LikesActivity.class);//ACTIVITY_NUM = 3
-                } else if (item.getItemId() == R.id.ic_profile) {
-                    intent = new Intent(context, ProfileActivity.class);//ACTIVITY_NUM = 4
-                }
-
-                if (intent != null) {
-                    context.startActivity(intent);
-                    return true;
-                }
-
-                return false;
+            if (item.getItemId() == R.id.ic_home) {
+                intent = new Intent(context, HomeActivity.class);//ACTIVITY_NUM = 0
+            } else if (item.getItemId() == R.id.ic_search) {
+                intent = new Intent(context, SearchActivity.class);//ACTIVITY_NUM = 1
+            } else if (item.getItemId() == R.id.ic_share) {
+                intent = new Intent(context, ShareActivity.class);//ACTIVITY_NUM = 2
+            } else if (item.getItemId() == R.id.ic_alert) {
+                intent = new Intent(context, LikesActivity.class);//ACTIVITY_NUM = 3
+            } else if (item.getItemId() == R.id.ic_profile) {
+                intent = new Intent(context, ProfileActivity.class);//ACTIVITY_NUM = 4
             }
+
+            if (intent != null) {
+                context.startActivity(intent);
+                return true;
+            }
+
+            return false;
         });
     }
 

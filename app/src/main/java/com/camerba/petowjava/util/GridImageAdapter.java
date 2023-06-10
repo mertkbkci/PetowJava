@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+
 import android.widget.ProgressBar;
 
 import com.camerba.petowjava.R;
@@ -16,7 +16,7 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +33,7 @@ public class GridImageAdapter extends ArrayAdapter<String> {
                             int layoutResource, String mAppend, ArrayList<String> imgURLs) {
         super(context, layoutResource, imgURLs);
         this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.mContext = mContext;
+        this.mContext = context;
         this.layoutResource = layoutResource;
         this.mAppend = mAppend;
         this.imgURLs = imgURLs;
