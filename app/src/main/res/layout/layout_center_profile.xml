@@ -40,10 +40,10 @@
 
                     <!--cirle image-->
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profile_image"
+                        android:id="@+id/profile_photo"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:background="@drawable/profilePhoto"
+                        android:background="@drawable/logo"
                        android:layout_centerVertical="true"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@color/black"
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/description"
                     android:textStyle="bold"
-                    android:text="Mert"
+                    android:text="hayvan sever"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:layout_marginTop="5dp"/>
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/website"
                     android:textStyle="bold"
-                    android:text="Mert"
+                    android:text="mertkabakci@gmail.com"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:layout_marginTop="5dp"/>

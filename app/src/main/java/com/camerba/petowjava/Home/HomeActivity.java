@@ -11,8 +11,10 @@ import android.view.MenuItem;
 
 import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
+import com.camerba.petowjava.util.UniversalImageLoader;
 import com.google.android.material.tabs.TabLayout;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Objects;
 
@@ -30,11 +32,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Log.d(TAG, "onCreate: Starring Activity");
+        initImageLoader();
 
-        //give instance of setupBottomNavigation view method
         setupBottomNavigation();
-        //tab adding methot
+
         setupViewPager();
+    }
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
     /*
@@ -47,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         adapter.addFraagment(new HomeFragment());//index value = 1
         adapter.addFraagment(new MessagesFragment());//index value = 2
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.container_viewpager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.container);
         viewPager.setAdapter(adapter);
 
         //the tabs

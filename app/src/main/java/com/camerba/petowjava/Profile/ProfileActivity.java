@@ -8,9 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.camerba.petowjava.R;
 import com.camerba.petowjava.util.BottomNavigationViewHelper;
+import com.camerba.petowjava.util.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +21,13 @@ import androidx.appcompat.widget.Toolbar;
 public class ProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "ProfileActivity";
+    private static final int ACTIVITY_NUM = 4;
     //context
     private final Context mContext = ProfileActivity.this;
     //context calling
-    private static final int ACTIVITY_NUM = 4;
+
+    private ProgressBar mProgressBar;
+    private ImageView profilePhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,22 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         //setupBottomNavigation();
+
         setupToolBar();
+        setupActivityWidgets();
+        setupProfileImage();
+
+    }
+
+    private void setupProfileImage(){
+        String imgURL ="encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkIw79YSfMGMJ_8Z4nkIgqc4pZrcSpuzNCUg&usqp=CAU";
+        UniversalImageLoader.setImage(imgURL,profilePhoto,mProgressBar,"https://");
+
+    }
+    private void setupActivityWidgets(){
+        mProgressBar =(ProgressBar) findViewById(R.id.profileProgressBar);
+        mProgressBar.setVisibility(View.GONE);
+        profilePhoto = (ImageView) findViewById(R.id.profile_photo);
 
     }
 
